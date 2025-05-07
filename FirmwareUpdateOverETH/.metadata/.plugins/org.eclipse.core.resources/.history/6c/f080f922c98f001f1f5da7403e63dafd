@@ -1,0 +1,11 @@
+#ifndef _FIRMWARE_UPDATER_H
+#define _FIRMWARE_UPDATER_H
+
+#include <stdio.h>
+#include <stdint.h>
+
+ int32_t extract_content_length( char *recv_buffer);
+
+ int get_firmware_binary(char *source_buffer, char *substring, char *dest_buffer, int bytes_to_copy);
+
+#endif

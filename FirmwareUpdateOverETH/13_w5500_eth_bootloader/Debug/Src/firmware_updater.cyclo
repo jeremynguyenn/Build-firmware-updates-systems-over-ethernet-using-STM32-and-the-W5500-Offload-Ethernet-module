@@ -1,0 +1,4 @@
+../Src/firmware_updater.c:13:6:jump_to_app	2
+../Src/firmware_updater.c:49:10:extract_content_length	5
+../Src/firmware_updater.c:94:6:get_firmware_binary	2
+../Src/firmware_updater.c:120:7:firmware_update	1

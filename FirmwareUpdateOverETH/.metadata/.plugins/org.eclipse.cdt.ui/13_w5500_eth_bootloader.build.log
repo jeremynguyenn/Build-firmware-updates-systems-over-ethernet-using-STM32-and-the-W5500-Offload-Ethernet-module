@@ -1,0 +1,10 @@
+19:03:47 **** Incremental Build of configuration Debug for project 13_w5500_eth_bootloader ****
+make -j8 all 
+arm-none-eabi-size  13_w5500_eth_bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33912	    260	  31340	  65512	   ffe8	13_w5500_eth_bootloader.elf
+Finished building: default.size.stdout
+ 
+
+19:03:47 Build Finished. 0 errors, 0 warnings. (took 527ms)
+

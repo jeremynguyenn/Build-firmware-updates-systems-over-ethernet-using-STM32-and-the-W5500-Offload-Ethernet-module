@@ -1,0 +1,10 @@
+18:06:35 **** Incremental Build of configuration Debug for project firmware-update-app ****
+make -j8 all 
+arm-none-eabi-size  firmware-update-app.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5320	    100	   1900	   7320	   1c98	firmware-update-app.elf
+Finished building: default.size.stdout
+ 
+
+18:06:35 Build Finished. 0 errors, 0 warnings. (took 361ms)
+

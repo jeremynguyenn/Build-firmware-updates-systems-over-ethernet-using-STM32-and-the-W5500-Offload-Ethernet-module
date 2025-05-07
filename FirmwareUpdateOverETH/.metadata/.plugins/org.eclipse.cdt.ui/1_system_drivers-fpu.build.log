@@ -1,0 +1,22 @@
+18:04:04 **** Build of configuration Debug for project 1_system_drivers-fpu ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/fpu.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Include" -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/fpu.d" -MT"Src/fpu.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fpu.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Include" -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Include" -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Include" -I"C:/Users/Ninsaw/Documents/FirmwareUpdateOverETH/1_system_drivers-fpu/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "1_system_drivers-fpu.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ninsaw\Documents\FirmwareUpdateOverETH\1_system_drivers-fpu\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_system_drivers-fpu.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: 1_system_drivers-fpu.elf has a LOAD segment with RWX permissions
+Finished building target: 1_system_drivers-fpu.elf
+ 
+arm-none-eabi-size  1_system_drivers-fpu.elf 
+arm-none-eabi-objdump -h -S 1_system_drivers-fpu.elf  > "1_system_drivers-fpu.list"
+   text	   data	    bss	    dec	    hex	filename
+    748	      8	   1568	   2324	    914	1_system_drivers-fpu.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1_system_drivers-fpu.list
+ 
+
+18:04:05 Build Finished. 0 errors, 1 warnings. (took 1s.486ms)
+

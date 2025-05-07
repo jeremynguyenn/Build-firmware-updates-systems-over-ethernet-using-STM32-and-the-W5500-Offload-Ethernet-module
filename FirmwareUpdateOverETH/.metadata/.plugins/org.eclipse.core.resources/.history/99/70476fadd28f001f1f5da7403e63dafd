@@ -1,0 +1,81 @@
+#include "firmware_updater.h"
+
+
+/**
+  * @brief Extracts the Content-Length value from the HTTP response buffer.
+  *
+  * @param recv_buffer The buffer containing the HTTP response.
+  * @return int32_t The Content-Length value, or -1 if not found or invalid.
+  */
+ int32_t extract_content_length( char *recv_buffer)
+ {
+     const char *content_length_str = "Content-Length: ";
+     const char *end_of_header_str = "\r\n";
+
+     // Find the position of "Content-Length: " in the receive buffer
+     const char *start = strstr(recv_buffer, content_length_str);
+     if (start == NULL) {
+         printf("Content-Length header not found\r\n");
+         return -1;  // Content-Length not found
+     }
+
+     // Move the pointer to the start of the content length value
+     start += strlen(content_length_str);
+
+     // Find the end of the content length value (terminated by "\r\n")
+     const char *end = strstr(start, end_of_header_str);
+     if (end == NULL) {
+         printf("End of Content-Length header not found\r\n");
+         return -1;  // End of Content-Length not found
+     }
+
+     // Extract the substring that represents the Content-Length value
+     char content_length_value[16];  // Assuming the Content-Length value is not too large
+     size_t length = end - start;
+     if (length >= sizeof(content_length_value)) {
+         printf("Content-Length value too long\r\n");
+         return -1;  // Length too long
+     }
+
+     // Copy the content length value to a temporary buffer
+     strncpy(content_length_value, start, length);
+     content_length_value[length] = '\0';  // Null-terminate the string
+
+     // Convert the Content-Length value to an integer
+     int32_t content_length = atoi(content_length_value);
+     if (content_length <= 0) {
+         printf("Invalid Content-Length value\r\n");
+         return -1;  // Invalid Content-Length value
+     }
+
+     return content_length;
+ }
+
+
+ int get_firmware_binary(char *source_buffer, char *substring, char *dest_buffer, int bytes_to_copy)
+ {
+     // Find the location of the substring in the source buffer
+     const char *substring_position = strstr(source_buffer, substring);
+
+     // If the substring is not found, return an error code
+     if (substring_position == NULL) {
+         printf("Substring not found\r\n");
+         return -1; // Substring not found
+     }
+
+     // Move the pointer past the substring to get to the data after it
+     const char *data_start = substring_position + strlen(substring);
+
+     size_t data_length = bytes_to_copy;
+
+     printf("Data length to copy: %d\r\n", data_length);
+
+     // Copy the data from data_start to the destination buffer
+     memcpy(dest_buffer, data_start, data_length);
+
+
+
+     return 0; // Success
+ }
+
+

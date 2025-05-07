@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;firmware-update-app/Debug/firmware-update-app.bin&apos; to &apos;firmware-v1019.bin&apos;" description="Rename resource &apos;firmware-update-app.bin&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/firmware-update-app.bin" name="firmware-v1019.bin" stamp="1729530418828" updateReferences="true"/>
+</session>

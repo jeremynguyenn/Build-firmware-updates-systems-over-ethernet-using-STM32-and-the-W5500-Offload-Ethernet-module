@@ -1,0 +1,4 @@
+../Src/main.c:44:6:check_cable_connection	16	static
+../Src/main.c:65:6:display_phy_config	16	static
+../Src/main.c:85:5:main	24	static
+../Src/main.c:173:8:process_dns	16	static
